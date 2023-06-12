@@ -1,6 +1,6 @@
 'use strict';
 
-// TODO: Minuszahlen, ESC = reset
+// TODO: ESC = reset
 
 let display = '';
 let operator = '';
