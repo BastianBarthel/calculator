@@ -1,6 +1,6 @@
 'use strict';
 
-// TODO: führende 0 abfangen, Kommastellen, Minuszahlen, ESC = reset
+// TODO: führende 0 abfangen, Minuszahlen, ESC = reset
 
 let display = '';
 let operator = '';
@@ -67,6 +67,13 @@ document.querySelector('.divide').addEventListener('click', function () {
   operator = 'divide';
   firstNumber = Number(display);
   display = '';
+});
+
+document.querySelector('.comma').addEventListener('click', function () {
+  if (!display.includes('.') && display) {
+    display += '.';
+    document.querySelector('.display').textContent = display;
+  }
 });
 
 document.querySelector('.equals').addEventListener('click', function () {
