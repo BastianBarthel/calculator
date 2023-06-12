@@ -1,6 +1,6 @@
 'use strict';
 
-// TODO: führende 0 abfangen, Minuszahlen, ESC = reset
+// TODO: Minuszahlen, ESC = reset
 
 let display = '';
 let operator = '';
@@ -44,8 +44,10 @@ document.querySelector('.num9').addEventListener('click', function () {
   document.querySelector('.display').textContent = display;
 });
 document.querySelector('.num0').addEventListener('click', function () {
-  display += 0;
-  document.querySelector('.display').textContent = display;
+  if (display) {
+    display += 0;
+    document.querySelector('.display').textContent = display;
+  }
 });
 
 document.querySelector('.plus').addEventListener('click', function () {
