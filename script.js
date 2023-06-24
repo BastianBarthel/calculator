@@ -1,7 +1,5 @@
 'use strict';
 
-// TODO: ESC = reset
-
 let display = '';
 let operator = '';
 let firstNumber = 0;
@@ -91,4 +89,14 @@ document.querySelector('.equals').addEventListener('click', function () {
     document.querySelector('.display').textContent = firstNumber / secondNumber;
 
   display = '';
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    display = '';
+    operator = '';
+    firstNumber = 0;
+    secondNumber = 0;
+    document.querySelector('.display').textContent = 0;
+  }
 });
